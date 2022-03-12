@@ -1,6 +1,7 @@
 package vader
 
 import (
+	"archive/zip"
 	"bufio"
 	"fmt"
 	"os"
@@ -10,6 +11,8 @@ import (
 	"strconv"
 	"strings"
 	"testing"
+	"time"
+	"unicode"
 )
 
 func TestVader_PolarityScores(t *testing.T) {
@@ -378,4 +381,151 @@ func TestExample(t *testing.T) {
 		score.Compound,
 		score.Sentiment(),
 	)
+}
+
+func TestErrors(t *testing.T) {
+
+	var files []string
+
+	t.Cleanup(func() {
+		for _, file := range files {
+			_ = os.Remove(file)
+		}
+	})
+
+	v, err := NewVader("")
+	if err == nil {
+		t.Fatal("should fail with a empty string")
+	} else if v != nil {
+		t.Fatal("should returned a nil value")
+	}
+
+	file, err := makeTestLexicon(t, "", "a", "b")
+	if err != nil {
+		t.Fatal(err)
+	}
+	files = append(files, file)
+	v, err = NewVader(file)
+	if err == nil {
+		t.Fatal("should return an error with a lexicon without emoji file.")
+	} else if v != nil {
+		t.Fatal("should returned a nil value")
+	}
+
+	file, err = makeTestLexicon(t, "a", "", "b")
+	if err != nil {
+		t.Fatal(err)
+	}
+	files = append(files, file)
+	v, err = NewVader(file)
+	if err == nil {
+		t.Fatal("should return an error with a lexicon without language file.")
+	} else if v != nil {
+		t.Fatal("should returned a nil value")
+	}
+
+	file, err = makeTestLexicon(t, "a", "b", "")
+	if err != nil {
+		t.Fatal(err)
+	}
+	files = append(files, file)
+	v, err = NewVader(file)
+	if err == nil {
+		t.Fatal("should return an error with a lexicon without lexicon file.")
+	} else if v != nil {
+		t.Fatal("should returned a nil value")
+	}
+
+	// invalid regexp
+	file, err = makeTestLexicon(
+		t,
+		"a",
+		"rule	<	*	-0.74	0	/[[/ * ?\n",
+		"c",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	files = append(files, file)
+	v, err = NewVader(file)
+	if err == nil {
+		t.Fatal("should return an error with an invalid regexp.")
+	} else if v != nil {
+		t.Fatal("should returned a nil value")
+	}
+
+	// already declared value
+	file, err = makeTestLexicon(
+		t,
+		"a",
+		"rule	<	*	-0.74	0	a\nrule	<	*	-0.74	0	a\n",
+		"c",
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	files = append(files, file)
+	v, err = NewVader(file)
+	if err == nil {
+		t.Fatal("should return an error with a duplicated value.")
+	} else if v != nil {
+		t.Fatal("should returned a nil value")
+	}
+
+	// test invalid file
+	v, err = NewVader("lexicons/test/emojis.tsv")
+	if err == nil {
+		t.Fatal("should return an error with a invalid file.")
+	} else if v != nil {
+		t.Fatal("should returned a nil value")
+	}
+}
+
+func makeTestLexicon(t *testing.T, emojis, language, lexicon string) (string, error) {
+	t.Helper()
+
+	filename := filepath.Join(os.TempDir(), fmt.Sprintf("vader_lexicon_%d.tmp", time.Now().UnixNano()))
+
+	f, err := os.Create(filename)
+	if err != nil {
+		return "", err
+	}
+
+	files := make(map[string]string)
+	if emojis != "" {
+		files["emojis.tsv"] = emojis
+	}
+	if language != "" {
+		files["language.txt"] = language
+	}
+	if lexicon != "" {
+		files["lexicon.tsv"] = lexicon
+	}
+
+	lex := zip.NewWriter(f)
+
+	for name, content := range files {
+		if entry, err := lex.Create(name); err != nil {
+			return "", err
+		} else if _, err = entry.Write([]byte(content)); err != nil {
+			return "", err
+		}
+	}
+
+	if err = lex.Close(); err != nil {
+		return "", err
+	}
+
+	return filename, nil
+}
+
+func Test_contains(t *testing.T) {
+
+	if !contains("abc", unicode.IsLetter) {
+		t.Fatal("expected true")
+	}
+
+	if contains("abc", unicode.IsDigit) {
+		t.Fatal("expected false")
+	}
 }

@@ -1,0 +1,31 @@
+lang	test
+remove_diacritics	true
+cap_increment	1.234
+
+replace	old_string	new_string
+
+# invalid replace declaration, this should be ignored
+replace	invalid
+
+rule	<	+	0.10	0	a *
+rule	<	-	0.20	0	b *
+rule	<	*	0.30	0	c *
+rule	<	=	0.40	0	d *
+rule	>	+	0.50	0	e *
+rule	>	-	0.60	0	f *
+rule	>	*	0.70	0	g *
+rule	>	=	0.80	0	h *
+rule	@	+	0.90	0	i *
+rule	@	-	1.00	0	j *
+rule	@	*	1.10	0	k *
+rule	@	=	1.20	0	l *
+
+# test exclusion
+rule	>	=	9.99	0	m *	m n
+rule	<	=	9.99	0	* n	n a
+
+# invalid rule, this should be ignored
+rule	_	=
+rule	_	=	9.00	0	m *
+rule	>	X	9.00	0	m *
+rule	>	=	aaaa	0	m *

@@ -1,0 +1,156 @@
+#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
+# Rules are derived from the original vader in python.															#
+#	Hutto, C.J. & Gilbert, E.E. (2014).																			#
+#	VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text.							#
+#	Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.			#
+#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
+
+lang	en
+remove_diacritics	false
+cap_increment	0.733
+
+
+rule	<	+	0.293	0	absolutely * ?
+rule	<	+	0.293	0	amazingly * ?
+rule	<	+	0.293	0	awfully * ?
+rule	<	+	0.293	0	completely * ?
+rule	<	+	0.293	0	considerable * ?
+rule	<	+	0.293	0	considerably * ?
+rule	<	+	0.293	0	decidedly * ?
+rule	<	+	0.293	0	deeply * ?
+rule	<	+	0.293	0	effing * ?
+rule	<	+	0.293	0	enormous * ?
+rule	<	+	0.293	0	enormously * ?
+rule	<	+	0.293	0	entirely * ?
+rule	<	+	0.293	0	especially * ?
+rule	<	+	0.293	0	exceptional * ?
+rule	<	+	0.293	0	exceptionally * ?
+rule	<	+	0.293	0	extreme * ?
+rule	<	+	0.293	0	extremely * ?
+rule	<	+	0.293	0	fabulously * ?
+rule	<	+	0.293	0	flipping * ?
+rule	<	+	0.293	0	flippin * ?
+rule	<	+	0.293	0	frackin * ?
+rule	<	+	0.293	0	fracking * ?
+rule	<	+	0.293	0	fricking * ?
+rule	<	+	0.293	0	frickin * ?
+rule	<	+	0.293	0	frigging * ?
+rule	<	+	0.293	0	friggin * ?
+rule	<	+	0.293	0	fully * ?
+rule	<	+	0.293	0	fuckin * ?
+rule	<	+	0.293	0	fucking * ?
+rule	<	+	0.293	0	fuggin * ?
+rule	<	+	0.293	0	fugging * ?
+rule	<	+	0.293	0	greatly * ?
+rule	<	+	0.293	0	hella * ?
+rule	<	+	0.293	0	highly * ?
+rule	<	+	0.293	0	hugely * ?
+rule	<	+	0.293	0	incredible * ?
+rule	<	+	0.293	0	incredibly * ?
+rule	<	+	0.293	0	intensely * ?
+rule	<	+	0.293	0	major * ?
+rule	<	+	0.293	0	majorly * ?
+rule	<	+	0.293	0	more * ?
+rule	<	+	0.293	0	most * ?
+rule	<	+	0.293	0	particularly * ?
+rule	<	+	0.293	0	purely * ?
+rule	<	+	0.293	0	quite * ?
+rule	<	+	0.293	0	really * ?
+rule	<	+	0.293	0	remarkably * ?
+rule	<	+	0.293	0	so * ?
+rule	<	+	0.293	0	substantially * ?
+rule	<	+	0.293	0	thoroughly * ?
+rule	<	+	0.293	0	total * ?
+rule	<	+	0.293	0	totally * ?
+rule	<	+	0.293	0	tremendous * ?
+rule	<	+	0.293	0	tremendously * ?
+rule	<	+	0.293	0	uber * ?
+rule	<	+	0.293	0	unbelievably * ?
+rule	<	+	0.293	0	unusually * ?
+rule	<	+	0.293	0	utter * ?
+rule	<	+	0.293	0	utterly * ?
+rule	<	+	0.293	0	very * ?
+
+rule	<	-	0.293	0	almost * ?
+rule	<	-	0.293	0	barely * ?
+rule	<	-	0.293	0	hardly * ?
+rule	<	-	0.293	0	just enough * ?
+rule	<	-	0.293	0	kinda * ?
+rule	<	-	0.293	0	kindof * ?
+rule	<	-	0.293	0	kind-of * ?
+rule	<	-	0.293	0	kind of * ?
+rule	<	-	0.293	0	less * ?
+rule	<	-	0.293	0	little * ?
+rule	<	-	0.293	0	marginal * ?
+rule	<	-	0.293	0	marginally * ?
+rule	<	-	0.293	0	occasional * ?
+rule	<	-	0.293	0	occasionally * ?
+rule	<	-	0.293	0	partly * ?
+rule	<	-	0.293	0	scarce * ?
+rule	<	-	0.293	0	scarcely * ?
+rule	<	-	0.293	0	slight * ?
+rule	<	-	0.293	0	slightly * ?
+rule	<	-	0.293	0	somewhat * ?
+rule	<	-	0.293	0	sort of * ?
+rule	<	-	0.293	0	sorta * ?
+rule	<	-	0.293	0	sortof * ?
+rule	<	-	0.293	0	sort-of * ?
+
+# negations
+
+rule	<	*	-0.74	0	/^.*n\'t$/ * ?
+rule	<	*	-0.74	0	never so *
+rule	<	*	-0.74	0	never this *
+rule	<	*	-0.74	0	no *	no problem	no concerns
+rule	<	*	-0.74	0	least *	at least	very least
+rule	<	*	-0.74	0	aint * ? ?
+rule	<	*	-0.74	0	arent * ? ?
+rule	<	*	-0.74	0	cannot * ? ?
+rule	<	*	-0.74	0	cant * ? ?
+rule	<	*	-0.74	0	couldnt * ? ?
+rule	<	*	-0.74	0	darent * ? ?
+rule	<	*	-0.74	0	didnt * ? ?
+rule	<	*	-0.74	0	doesnt * ? ?
+rule	<	*	-0.74	0	dont * ? ?
+rule	<	*	-0.74	0	hadnt * ? ?
+rule	<	*	-0.74	0	hasnt * ? ?
+rule	<	*	-0.74	0	havent * ? ?
+rule	<	*	-0.74	0	isnt * ? ?
+rule	<	*	-0.74	0	mightnt * ? ?
+rule	<	*	-0.74	0	mustnt * ? ?
+rule	<	*	-0.74	0	neither * ? ?
+rule	<	*	-0.74	0	neednt * ? ?
+rule	<	*	-0.74	0	never * ? ?	never so *	never this *
+rule	<	*	-0.74	0	none * ? ?
+rule	<	*	-0.74	0	nope * ? ?
+rule	<	*	-0.74	0	nor * ? ?
+rule	<	*	-0.74	0	not * ? ?
+rule	<	*	-0.74	0	nothing * ? ?
+rule	<	*	-0.74	0	nowhere * ? ?
+rule	<	*	-0.74	0	oughtnt * ? ?
+rule	<	*	-0.74	0	shant * ? ?
+rule	<	*	-0.74	0	shouldnt * ? ?
+rule	<	*	-0.74	0	uhuh * ? ?
+rule	<	*	-0.74	0	wasnt * ? ?
+rule	<	*	-0.74	0	werent * ? ?
+rule	<	*	-0.74	0	uh-uh * ? ?
+rule	<	*	-0.74	0	without * ? ?
+rule	<	*	-0.74	0	without * doubt
+rule	<	*	-0.74	0	wont * ? ?
+rule	<	*	-0.74	0	wouldnt * ? ?
+rule	<	*	-0.74	0	rarely * ? ?
+rule	<	*	-0.74	0	seldom * ? ?
+rule	<	*	-0.74	0	despite * ? ?
+
+
+# special
+rule	>	=	00.0	1	kind of
+rule	<	=	03.0	1	the shit
+rule	<	=	03.0	1	the bomb
+rule	<	=	01.5	1	bad ass
+rule	<	=	01.5	1	badass
+rule	<	=	-2.0	1	yeah right
+rule	<	=	-1.5	1	kiss of death
+rule	<	=	03.0	1	to die for
+
+rule	@	*	00.5	0	but

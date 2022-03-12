@@ -1,0 +1,172 @@
+lang	pt
+remove_diacritics	true
+cap_increment	0.733
+
+replace	é	eh
+
+# booster
+rule	<	+	0.293	0	absolutamente *
+rule	<	+	0.293	0	agitadamente *
+rule	<	-	0.293	0	algo *
+rule	<	+	0.293	0	altamente *
+rule	<	+	0.293	0	bem *
+rule	<	-	0.293	0	bem pouquinho *
+rule	<	+	0.293	0	bastante *
+rule	>	+	0.293	0	* bastante
+rule	<	+	0.293	0	claro que *
+rule	<	+	0.293	0	cheio de *
+rule	<	+	0.293	0	com *
+rule	<	+	0.293	0	completamente *
+rule	>	+	0.293	0	* completamente
+rule	<	+	0.293	0	consideravelmente *
+rule	<	+	0.293	0	decididamente *
+rule	>	+	0.293	0	* demais
+rule	<	+	0.293	0	demasiado *
+rule	<	+	0.293	0	demasiadamente *
+rule	<	-	0.293	0	dificilmente *
+rule	<	+	0.293	0	enormemente *
+rule	<	-	0.293	0	escassamente *
+rule	<	+	0.293	0	especialmente *
+rule	<	+	0.293	0	excepcionalmente *
+rule	<	+	0.293	0	excessivamente *
+rule	>	+	0.293	0	* excessivamente
+rule	<	+	0.293	0	extremamente *
+rule	<	+	0.293	0	fabulosamente *
+rule	<	+	0.293	0	fortemente *
+rule	<	-	0.293	0	fracamente *
+rule	<	+	0.293	0	fudidamente *
+rule	<	+	0.293	0	fudidasso *
+rule	<	+	0.293	0	grandemente *
+rule	<	+	0.293	0	grandiosamente *
+rule	<	+	0.293	0	incrivelmente *
+rule	<	+	0.293	0	inteiramente *
+rule	<	+	0.293	0	intensamente *
+rule	<	-	0.293	0	levemente *
+rule	<	+	0.293	0	mais *
+rule	<	-	0.293	0	mais ou menos *
+rule	<	+	0.293	0	majoritariamente *
+rule	<	-	0.293	0	menos *
+rule	<	+	0.293	0	muito * ?
+rule	<	+	0.293	0	muito muito *
+rule	<	-	0.293	0	muito pouco *
+rule	<	+	0.293	0	na moral *
+rule	<	+	0.293	0	o mais *
+rule	<	-	0.293	0	ocasionalmente *
+rule	<	-	0.293	0	parcialmente *
+rule	<	+	0.293	0	particularmente *
+rule	<	-	0.293	0	pouco *
+rule	<	-	0.293	0	pouquinho *
+rule	<	+	0.293	0	pra caramba *
+rule	<	+	0.293	0	pra valer *
+rule	<	+	0.293	0	predominantemente *
+rule	<	+	0.293	0	profundamente *
+rule	<	+	0.293	0	puramente *
+rule	<	-	0.293	0	quase * ?
+rule	<	+	0.293	0	realmente *
+rule	<	-	0.293	0	so o necessario *
+rule	<	+	0.293	0	substancialmente *
+rule	<	+	0.293	0	super *
+rule	<	-	0.293	0	superficialmente *
+rule	<	+	0.293	0	surpreendentemente *
+rule	<	-	0.293	0	talvez * *
+rule	<	-	0.293	0	tantinho *
+rule	<	+	0.293	0	tao *
+rule	<	+	0.293	0	terrivelmente *
+rule	<	-	0.293	0	tipo *
+rule	<	+	0.293	0	tremendamente *
+rule	<	-	0.293	0	um pouco *
+rule	<	-	0.293	0	um pouquinho *
+rule	<	-	0.293	0	um tantinho *
+rule	<	-	0.293	0	um tanto *
+
+# negações
+rule	<	*	-0.733	0	ausencia de *
+rule	<	*	-0.733	0	falta de *
+rule	<	*	-0.733	0	jamais * ?
+rule	<	*	-0.733	0	nao eh ?
+rule	<	*	-0.733	0	nao * ?
+rule	<	*	-0.733	0	nem * ?
+rule	<	*	-0.733	0	nenhum *
+rule	<	*	-0.733	0	nada *
+rule	<	*	-0.733	0	nunca * ?
+rule	<	*	-0.733	0	nope
+rule	<	*	-0.733	0	raramente *
+rule	<	*	-0.733	0	sem *
+rule	<	*	-0.733	0	tampouco * ?
+
+# expressões negativas (Brasileiras)
+rule	<	=	-1.4	0	arma de fogo
+rule	<	=	-2.9	0	assedio moral
+rule	<	=	-0.3	0	caminho de guerra
+rule	<	=	-1.6	0	campo de batalha
+rule	<	=	-0.6	0	campos de batalha
+rule	<	=	-1.6	0	encher o saco
+rule	<	=	-1.4	0	fazendo caretas
+rule	<	=	-2.0	0	fez uma careta
+rule	<	= 	-2.7	0	filho da puta
+rule	<	=	-1.2	0	frente de batalha
+rule	<	=	-0.8	0	frentes de batalha
+rule	<	=	-1.5	0	lavagem cerebral
+rule	<	=	-1.5	0	mal *
+rule	<	=	-2.0	0	mais entusiasmado
+rule	<	=	-2.2	0	mais escuro
+rule	<	=	-2.8	0	mais esperto
+rule	<	=	-1.4	0	mais sujo
+rule	<	=	-2.0	0	nao suporto
+rule	<	=	-0.1	0	navio de guerra
+rule	<	=	-0.5	0	navios de guerra
+rule	<	=	-1.4	0	se acha
+rule	<	=	-2.6	0	sem compaixao
+rule	<	=	-0.8	0	sem graca
+rule	<	=	-1.7	0	teu cu
+rule	<	=	-0.5	0	vagoes de batalha
+
+# expressões positivas
+rule	<	-	02.7	0	a comemorar
+rule	<	-	01.6	0	com certeza
+rule	<	-	02.0	0	se preocupa
+rule	<	-	-1.5	0	sem nocao
+rule	<	-	02.0	0	tirar o folego
+rule	<	-	02.0	0	tudo bem
+
+# special cases
+rule	<	=	-1.33	1	acaba em pizza
+rule	<	=	-1.33	1	acabar em pizza
+rule	<	=	-1.96	1	amigo da onca
+rule	<	=	-1.48	1	bode expiatorio
+rule	<	=	1.393	1	bola para frente
+rule	<	=	-2.73	1	casa da mae joana
+rule	<	=	-1.28	1	chato de galocha
+rule	<	=	-2.34	1	cheio de nove horas
+rule	<	=	-1.4	1	chorando as pitangas
+rule	<	=	-3.00	1	cobra vai fumar
+rule	<	=	-2.71	1	corredor polones
+rule	<	=	3.000	1	do caralho
+rule	<	=	-3.00	1	gordo fazendo gordice
+rule	<	=	2.533	1	manja dos paranaue
+rule	<	=	-2.28	1	mata cachorro no grito
+rule	<	=	-2.28	1	matar cachorro no grito
+rule	<	=	-1.93	1	mina pira
+rule	<	=	2.800	1	muito foda
+rule	<	=	-1.89	1	negocio da china
+rule	<	=	-1.93	1	para ingles ver
+rule	<	=	-1.23	1	parede tem ouvido
+rule	<	=	-1.23	1	paredes tem ouvidos
+rule	<	=	-2.11	1	puxa saco
+rule	<	=	-2.11	1	puxa-saco
+rule	<	=	-2.22	1	rei na barriga
+rule	<	=	-1.13	1	rodar a baiana
+rule	<	=	-2.73	1	santo do pau oco
+rule	<	=	-1.33	1	termina em pizza
+rule	<	=	-1.33	1	terminar em pizza
+rule	<	=	2.800	1	vale a pena
+rule	<	=	-2.32	1	voto de minerva
+
+# Conjunções adversativas
+rule	@	*	0.500	0	mas
+rule	@	*	0.500	0	porem
+rule	@	*	0.500	0	contudo
+rule	@	*	0.500	0	todavia
+rule	@	*	0.500	0	entretanto
+rule	@	*	0.500	0	no entanto
+rule	@	*	0.500	0	nao obstante

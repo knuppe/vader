@@ -27,8 +27,9 @@ type Scores struct {
 	Compound float64
 }
 
+// Sentiment returns the score sentiment "positive" (compound score >= 0.05), "negative" (compound score <= -0.05) or "neutral".
 func (s *Scores) Sentiment() string {
-	if s.Compound >= 0.5 {
+	if s.Compound >= 0.05 {
 		return "positive"
 	} else if s.Compound <= -0.05 {
 		return "negative"
@@ -36,6 +37,7 @@ func (s *Scores) Sentiment() string {
 	return "neutral"
 }
 
+// Vader computes sentiment intensity scores for sentences.
 type Vader struct {
 	lexicon          map[string]float64
 	emojis           map[string]float64
@@ -67,9 +69,8 @@ func (n *node) find(v *Vader, words []string, pos int, backwards bool, alreadyMa
 	if pos == -1 {
 		if n.isSet && !sliceContains(alreadyMatched, n.expr) {
 			return n, true
-		} else {
-			return nil, false
 		}
+		return nil, false
 	} else if pos == len(words) {
 		if n.isSet && !sliceContains(alreadyMatched, n.expr) {
 			return n, true
@@ -139,7 +140,7 @@ nextException:
 	return child, true
 }
 
-// Creates a new Vader instance using the zip lexicon file.
+// NewVader creates a new Vader instance using the zip lexicon file.
 func NewVader(vaderZipFile string) (*Vader, error) {
 
 	f, err := zip.OpenReader(vaderZipFile)
@@ -207,7 +208,7 @@ func NewVader(vaderZipFile string) (*Vader, error) {
 	return v, nil
 }
 
-// Return a float for sentiment strength based on the input text. Positive values are positive valence, negative value are negative valence.
+// PolarityScores computes the sentiment strength based on the input text.
 func (v *Vader) PolarityScores(sentence string) Scores {
 	if v.removeDiacritics {
 		if output, _, e := transform.String(normText, sentence); e == nil {
@@ -551,18 +552,17 @@ func (v *Vader) readLanguage(r io.ReadCloser) error {
 					}
 					if cur.isSet {
 						return fmt.Errorf("the sequence is already defined: %s", s.Text())
-					} else {
-						cur.isSet = true
-						cur.valence = f
-						cur.mode = mode
-						cur.stop = stop
-						cur.count = len(sequence)
-						cur.expr = strings.Join(sequence, " ")
-						if len(token) > 6 {
-							cur.exceptions = make([][]string, 0)
-							for _, exception := range token[6:] {
-								cur.exceptions = append(cur.exceptions, strings.Fields(exception))
-							}
+					}
+					cur.isSet = true
+					cur.valence = f
+					cur.mode = mode
+					cur.stop = stop
+					cur.count = len(sequence)
+					cur.expr = strings.Join(sequence, " ")
+					if len(token) > 6 {
+						cur.exceptions = make([][]string, 0)
+						for _, exception := range token[6:] {
+							cur.exceptions = append(cur.exceptions, strings.Fields(exception))
 						}
 					}
 				}

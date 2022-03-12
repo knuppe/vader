@@ -43,8 +43,8 @@ ok  	github.com/knuppe/vader	3.486s
 
 1. Download the desired lexicon file(s).
 
-   - [English](https://raw.githubusercontent.com/knuppe/vader/lexicons/en/en.zip)
-   - [Portuguese](https://raw.githubusercontent.com/knuppe/vader/lexicons/pt/pt.zip)
+   - [English](https://github.com/knuppe/vader/raw/main/lexicons/en/en.zip)
+   - [Portuguese](https://github.com/knuppe/vader/raw/main/lexicons/pt/pt.zip)
 
 2. Download the module.  
    `go get -u github.com/knuppe/vader@v1.0.0`

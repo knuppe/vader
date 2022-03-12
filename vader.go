@@ -609,13 +609,7 @@ func contains(s string, f func(rune) bool) bool {
 
 // Normalize the score to be between -1 and 1 using an alpha that approximates the max expected value
 func normalize(score, alpha float64) float64 {
-	normScore := score / math.Sqrt((score*score)+alpha)
-	if normScore < -1.0 {
-		return -1.0
-	} else if normScore > 1.0 {
-		return 1.0
-	}
-	return normScore
+	return score / math.Sqrt((score*score)+alpha)
 }
 
 func roundTo(n float64, decimals uint32) float64 {

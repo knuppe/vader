@@ -47,7 +47,7 @@ ok  	github.com/knuppe/vader	3.486s
    - [Portuguese](https://github.com/knuppe/vader/raw/main/lexicons/pt/pt.zip)
 
 2. Download the module.  
-   `go get -u github.com/knuppe/vader@v1.0.0`
+   `go get -u github.com/knuppe/vader@latest`
 
 3. Have fun ;)
    

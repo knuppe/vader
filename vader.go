@@ -21,10 +21,10 @@ var normText = transform.Chain(norm.NFD, runes.Remove(runes.In(unicode.Mn)), nor
 
 // Scores encapsulates a single sentiment measure for a statement
 type Scores struct {
-	Negative float64
-	Neutral  float64
-	Positive float64
-	Compound float64
+	Negative float64 `json:"negative"`
+	Neutral  float64 `json:"neutral"`
+	Positive float64 `json:"positive"`
+	Compound float64 `json:"compound"`
 }
 
 // Sentiment returns the score sentiment "positive" (compound score >= 0.05), "negative" (compound score <= -0.05) or "neutral".

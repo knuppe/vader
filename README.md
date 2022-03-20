@@ -52,7 +52,7 @@ ok  	github.com/knuppe/vader	3.486s
 3. Have fun ;)
    
 Here is a minimal Go program that uses this package in order
-to stem a single word **or** a sentence.
+to analyze a sentence.
 
 ```go
 package main

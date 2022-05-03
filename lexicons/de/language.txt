@@ -1,0 +1,94 @@
+lang	de
+remove_diacritics	false
+cap_increment	0.733
+
+rule	<	+	0.293	0	absolut * ?
+rule	<	+	0.293	0	total * ?
+rule	<	+	0.293	0	unbedingt * ?
+rule	<	+	0.293	0	erstaunlich * ?
+rule	<	+	0.293	0	enorm * ?
+rule	<	+	0.293	0	komplett * ?
+rule	<	+	0.293	0	restlos * ?
+rule	<	+	0.293	0	gänzlich * ?
+rule	<	+	0.293	0	völlig * ?
+rule	<	+	0.293	0	beträchtlich * ?
+rule	<	+	0.293	0	erheblich * ?
+rule	<	+	0.293	0	deutlich * ?
+rule	<	+	0.293	0	ausgesprochen * ?
+rule	<	+	0.293	0	eindeutig * ?
+rule	<	+	0.293	0	zutiefst * ?
+rule	<	+	0.293	0	verdammt * ?
+rule	<	+	0.293	0	überaus * ?
+rule	<	+	0.293	0	besonders * ?
+rule	<	+	0.293	0	außerordentlich * ?
+rule	<	+	0.293	0	außergewöhnlich * ?
+rule	<	+	0.293	0	ungemein * ?
+rule	<	+	0.293	0	äußerst * ?
+rule	<	+	0.293	0	extrem * ?
+rule	<	+	0.293	0	sagenhaft * ?
+rule	<	+	0.293	0	verfickt * ?
+rule	<	+	0.293	0	sehr * ?
+rule	<	+	0.293	0	massiv * ?
+rule	<	+	0.293	0	mega * ?
+rule	<	+	0.293	0	höchst * ?
+rule	<	+	0.293	0	immens * ?
+rule	<	+	0.293	0	so * ?
+rule	<	+	0.293	0	wesentlich * ?
+rule	<	+	0.293	0	über * ?
+rule	<	+	0.293	0	ziemlich *
+
+rule	<	-	0.293	0	fast * ?
+rule	<	-	0.293	0	nahezu * ?
+rule	<	-	0.293	0	beinahe * ?
+rule	<	-	0.293	0	beinah * ?
+rule	<	-	0.293	0	geradeso * ?
+rule	<	-	0.293	0	irgendwie * ?
+rule	<	-	0.293	0	quasi * ?
+rule	<	-	0.293	0	geringfügig * ?
+rule	<	-	0.293	0	unwesentlich * ?
+rule	<	-	0.293	0	marginal * ?
+rule	<	-	0.293	0	zeitweise * ?
+rule	<	-	0.293	0	gelegentlich * ?
+rule	<	-	0.293	0	mitunter * ?
+rule	<	-	0.293	0	halbwegs * ?
+rule	<	-	0.293	0	teils * ?
+rule	<	-	0.293	0	tweilweise * ?
+rule	<	-	0.293	0	etwas * ?
+rule	<	-	0.293	0	bisschen * ?
+rule	<	-	0.293	0	einigermaßen * ?
+rule	<	-	0.293	0	derlei * ?
+rule	<	-	0.293	0	gewissermaßen * ?
+
+# negations
+rule	<	*	-0.74	0	nicht * *
+rule	<	*	-0.74	0	nie * ?
+rule	<	*	-0.74	0	never * ?
+rule	<	*	-0.74	0	niemals * ?
+rule	<	*	-0.74	0	keine * ?
+rule	<	*	-0.74	0	nope * ?
+rule	<	*	-0.74	0	nichts * ?
+rule	<	*	-0.74	0	weder * ?
+rule	<	*	-0.74	0	nix * ?
+rule	<	*	-0.74	0	nirgendwo * ?
+rule	<	*	-0.74	0	uhuh * ?
+rule	<	*	-0.74	0	uh-uh * ?
+rule	<	*	-0.74	0	ohne *
+rule	<	*	-0.74	0	selten * ?
+rule	<	*	-0.74	0	kaum * ?
+rule	<	*	-0.74	0	seltentst * ?
+rule	<	*	-0.74	0	rar * ?
+rule	<	*	-0.74	0	trotz * ?
+rule	<	*	-0.74	0	trotzdem * ?
+rule	<	*	-0.74	0	obwohl * ?
+
+# special
+rule	<	=	01.5	1	nicht so krass
+
+# rule	>	=	00.0	1	kind of
+# rule	<	=	03.0	1	the shit
+# rule	<	=	03.0	1	the bomb
+# rule	<	=	01.5	1	bad ass
+# rule	<	=	-2.0	1	yeah right
+# rule	<	=	-1.5	1	kiss of death
+# rule	<	=	03.0	1	to die for
+# rule	@	*	00.5	0	but

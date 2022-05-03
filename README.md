@@ -24,6 +24,7 @@ VADER is a lexicon and rule-based sentiment analysis tool that is *specifically 
 
 * English
 * Portuguese
+* German - Lexicon adapted from [GerVADER](https://github.com/KarstenAMF/GerVADER).
 
 ## Benchmark
 ```
@@ -45,6 +46,7 @@ ok  	github.com/knuppe/vader	3.486s
 
    - [English](https://github.com/knuppe/vader/raw/main/lexicons/en/en.zip)
    - [Portuguese](https://github.com/knuppe/vader/raw/main/lexicons/pt/pt.zip)
+   - [German](https://github.com/knuppe/vader/raw/main/lexicons/de/de.zip)
 
 2. Download the module.  
    `go get -u github.com/knuppe/vader@latest`

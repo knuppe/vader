@@ -65,12 +65,12 @@ import (
 
 func main(){
 	// you need to download de lexicon zip files.
-	vader, err := NewVader("lexicons/en/en.zip")
+	v, err := vader.NewVader("lexicons/en/en.zip")
 	if err != nil {
 		panic(err)
 	}
 
-	score := vader.PolarityScores("VADER is smart, handsome, and funny!")
+	score := v.PolarityScores("VADER is smart, handsome, and funny!")
 
 	fmt.Printf(
 		"neg: %.3f, neu: %.3f, pos: %.3f, compound: %.3f (%s)",
